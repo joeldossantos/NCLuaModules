@@ -1,0 +1,49 @@
+NCLuaModules
+=======
+
+_NCLuaModules_ é uma implementação dos módulos Lua especificados na norma ABNT NBR 15606-2:2007 para a construção de aplicações interativas para TV digital.
+
+Esta implementação é destinada àqueles que desejam testar seus scripts Lua sem a necessidade de executá-los em uma implementação do middleware Ginga-NCL. Uma outra utilidade é o {Desenvolvimento Dirigido a Testes de scripts Lua em projetos de TV digital.}[http://rafaelcarvalho.tv/2010/desenvolvimento-dirigido-por-testes-para-tv-digital-utilizando-lua-8]
+
+_NCLuaModules_ implementa os módulos _event_, _persistent_ e _settings_.
+
+
+Módulo Settings
+--------
+
+Esse módulo permite que um programa Lua acesse as variáveis de sistema, assim como um programa NCL. Isso é feito através de uma tabela contendo variáveis com o mesmo nome das variáveis especificadas na norma ABNT NBR 15606-2:2007.
+
+Exemplos de uso: 
+    lang = settings.system.language 
+    age = settings.user.age 
+    val = settings.default.selBorderColor 
+    settings.service.myVar = 10 
+    settings.user.age = 18 --> ERRO! 
+
+
+Módulo Persistent
+--------
+
+Esse módulo permite que um programa Lua acesse e crie variáveis persistentes. O módulo _persistent_ possui um conjunto de variáveis
+shared que permite o Lua criar uma variável e atribuir seu valor.
+
+
+Esse módulo permite que um programa Lua salve dados e recupere-os entre execuções. O módulo _persistent_ mantém um conjunto de variáveis em grupos "service", "channel" e "shared", com a mesma semântica dos grupos homônimos do nó NCL settings. Não existe nenhuma variável predefinida ou reservada nesses grupos, valores pode ser atribuídos a essas variáveis diretamente.
+
+O uso da tabela persistent é semelhante ao uso da tabela settings, exceto pelo fato que, neste caso, o código procedural pode mudar os valores dos campos.
+
+Exemplos de uso: 
+    persistent.service.total = 10
+    color = persistent.shared.color
+
+
+Contribuindo
+--------
+
+Sinta-se a vontade para contribuir conosco. Verifique como nos tutoriais de colaboração (Collaborating) na seção de {ajuda do GitHub}[http://help.github.com/].
+
+
+Licença
+--------
+
+_NCLuaModules_ está sob licença GNU GPL 2.0
