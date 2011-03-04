@@ -1,5 +1,4 @@
-NCLuaModules
-=======
+= NCLuaModules
 
 _NCLuaModules_ é uma implementação dos módulos Lua especificados na norma ABNT NBR 15606-2:2007 para a construção de aplicações interativas para TV digital.
 
@@ -8,8 +7,7 @@ Esta implementação é destinada àqueles que desejam testar seus scripts Lua s
 _NCLuaModules_ implementa os módulos _event_, _persistent_ e _settings_.
 
 
-Módulo Settings
---------
+== Módulo Settings
 
 Esse módulo permite que um programa Lua acesse as variáveis de sistema, assim como um programa NCL. Isso é feito através de uma tabela contendo variáveis com o mesmo nome das variáveis especificadas na norma ABNT NBR 15606-2:2007.
 
@@ -21,8 +19,7 @@ Exemplos de uso:
     settings.user.age = 18 --> ERRO! 
 
 
-Módulo Persistent
---------
+== Módulo Persistent
 
 Esse módulo permite que um programa Lua acesse e crie variáveis persistentes. O módulo _persistent_ possui um conjunto de variáveis
 shared que permite o Lua criar uma variável e atribuir seu valor.
@@ -37,13 +34,11 @@ Exemplos de uso:
     color = persistent.shared.color
 
 
-Contribuindo
---------
+== Contribuindo
 
 Sinta-se a vontade para contribuir conosco. Verifique como nos tutoriais de colaboração (Collaborating) na seção de {ajuda do GitHub}[http://help.github.com/].
 
 
-Licença
---------
+== Licença
 
 _NCLuaModules_ está sob licença GNU GPL 2.0
